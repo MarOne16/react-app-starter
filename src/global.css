@@ -1,0 +1,27 @@
+/* Design tokens, fonts and Tailwind entry all come from the shared UI package. */
+@import "@fusion-uis/ui/global.css";
+
+/* Tailwind v4 only generates classes it can see — point it at the installed
+   library so utilities used inside @fusion-uis/ui are emitted too. */
+@source "../node_modules/@fusion-uis/ui/dist";
+
+@layer base {
+  :root,
+  body,
+  main {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
